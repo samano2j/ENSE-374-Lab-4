@@ -1,0 +1,6 @@
+
+.DS_Store
+.gitattributes
+.settings/org.eclipse.jdt.core.prefs
+bin/Phase_1/CorporateCustomer.class
+*.class
