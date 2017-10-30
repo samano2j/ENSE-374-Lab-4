@@ -6,14 +6,14 @@ import java.util.Scanner;
 public class SimpleOrder {
 
 	public static void main(String[] args) {
-		
+		//Simple Order Application
 		System.out.println("Welcome to Anime Shop!");
 		
-		OrderApplication app = new OrderApplication();
+		OrderApplication oa = new OrderApplication();
 		
-		Order wantedOrder = new Order(); 
+		Order order = new Order(); 
 		
-		app.createOrder(wantedOrder);
+		oa.createOrder(order);
 		
 		
 	}

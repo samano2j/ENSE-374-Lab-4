@@ -1,16 +1,20 @@
 package Phase_1;
 
 public class Product {
-
+	
+	//variables
 	private String name;
 	private double price;
 	private int productID;
 	
+	//constructor
 	Product() {
 		name = null;
 		price = 0.0;
 		productID = 0;
 	}
+	
+
 	public Product(String newName, double newPrice, int newProductID) {
 		name = newName;
 		price = newPrice;

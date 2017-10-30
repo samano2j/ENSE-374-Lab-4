@@ -11,7 +11,7 @@ public class OrderApplication  {
 	private CorporateCustomer cc = new CorporateCustomer();
 	private PersonalCustomer pc = new PersonalCustomer();
 
-	
+	//create order
 	public boolean createOrder(Order cart) {
 		
 		Scanner in = new Scanner(System.in); 
@@ -31,10 +31,10 @@ public class OrderApplication  {
 		String contactName;
 		int creditNumber;
 		
-		chk = importCatalogue();
-		System.out.println("List of Products Available:");
-		cart.printCatalogue(catalg);
-		while (choice == 'y') {
+		chk = importCatalogue();														//import catalogues
+		System.out.println("List of Products Available:");							
+		cart.printCatalogue(catalg);													//print catalogues
+		while (choice == 'y') {														//get user orders
 			checkIfproductExist = false;  
 			System.out.println("What do you want to order:");
 			item = in.nextLine();
@@ -67,7 +67,7 @@ public class OrderApplication  {
 			in.nextLine();
 		}
 		
-		if (chk == true) {
+		if (chk == true) {															//calculate price and add discount
 			totalPrice = cart.calculatePrice(catalg);
 			System.out.println("Do you have discount (if yes press y, and if not press any other key");
 			discountQuestion = in.next().charAt(0);
@@ -80,10 +80,10 @@ public class OrderApplication  {
 			in.nextLine();
 			System.out.println("Enter your name: ");
 			name = in.nextLine();
-			newCustomer.set_Name(name);
+			newCustomer.setName(name);
 			System.out.println("Enter address: ");
 			address = in.nextLine();
-			newCustomer.set_Address(address);
+			newCustomer.setAddress(address);
 			System.out.println("Enter Credit Card number: ");
 			creditNumber = in.nextInt();
 			pc.set_creditCardNumber(creditNumber);
@@ -92,7 +92,7 @@ public class OrderApplication  {
 			contactName = in.nextLine();
 			cc.set_contactName(contactName);
 			
-			System.out.println("Check out info:" );
+			System.out.println("Check out info:" );									//print out user info and total price
 			
 			System.out.println("Buyer name:" + newCustomer.getName());
 			System.out.println("Buyer contact name:" + cc.get_contactName());
@@ -108,6 +108,7 @@ public class OrderApplication  {
 		return chk;
 	}
 	
+	//import catalogue
 	private boolean importCatalogue() {
 		boolean chk = false;
 		int counter = 0; // counter for the objects

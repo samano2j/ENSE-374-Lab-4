@@ -1,27 +1,29 @@
 package Phase_1;
 
 public class Customer {
-
+	
+	//variables
 	private String name;
 	private String address;
 	private float creditRating;
 	private float discountRating;
 	
-	public void set_CreditRating(float newCreditRating) {
+	//setter
+	public void setCreditRating(float newCreditRating) {
 		creditRating = newCreditRating;
 	}
-	public void set_Name(String newName) {
+	public void setName(String newName) {
 		name = newName;
 	}
-	public void set_Address(String newAddress) {
+	public void setAddress(String newAddress) {
 		address = newAddress;
 	}
-	public void set_DiscountRating(float newDiscountRating) {
+	public void setDiscountRating(float newDiscountRating) {
 		discountRating = newDiscountRating;
 	}
 	
 	
-	
+	//getter
 	public String getName() {
 		return name;
 	}
@@ -30,11 +32,11 @@ public class Customer {
 		return address;
 	}
 	
-	public float creditRating() {
+	public float getCreditRating() {
 		return creditRating;
 	}
 	
-	public float discountRating() {
+	public float getDiscountRating() {
 		return discountRating;
 	}
 }

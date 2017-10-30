@@ -1,16 +1,18 @@
 package Phase_1;
 
 public class OrderLine {
-
-	private int quantity2; // changed from quantity due to duplicate name
-	private double Tprice; // changed from price due to duplicate name
+	//variables
+	private int quantity2; 
+	private double Tprice; 
 	
+	//constructor
 	OrderLine( ) {
 		quantity2 = 0;
 		Tprice = 0;
 	}
 	
-	public Product getProduct() { // changed from getProduct due to duplicate name
+	//getters
+	public Product getProduct() { 
 		Product temp = null;
 		return temp;
 	}
@@ -22,6 +24,8 @@ public class OrderLine {
 	public double getPrice() {
 		return Tprice;
 	}
+	
+	//setters
 	public void setQuantiy(int wantedQuantity) {
 		quantity2 = wantedQuantity;
 	}

@@ -6,7 +6,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 public class Order{
-
+	//variables
 	private Date dateReceived;
 	private double price;
 	private int orderID;
@@ -14,6 +14,7 @@ public class Order{
 	private Product[] wantedItems;
 	private OrderLine[] wantedQuantity;
 	
+	//constructor
 	public Order() {
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
 		dateReceived = new Date();
@@ -34,7 +35,7 @@ public class Order{
 		}
 	}
 	
-	// setters
+	//setters
 	public void set_dateReceived(Date new_dateReceived) {
 		dateReceived = new_dateReceived;
 	}
@@ -47,7 +48,7 @@ public class Order{
 		orderID = new_orderID;
 	}
 	
-	// getters
+	//getters
 	public Date get_dateReceived() {
 		return dateReceived;
 	}
@@ -66,11 +67,12 @@ public class Order{
 		return wantedQuantity;
 	}
 	
-	// methods required
-	public Date getDateReceived() { //////////// ?????????????
+	//methods 
+	public Date getDateReceived() { 
 		return dateReceived;
 	}
 	
+	//calculate total price 
 	public double calculatePrice(ProductCatalogue catalg) {
 		System.out.println("Order receipt:");
 		System.out.println("Date order recieved: " + dateReceived);
@@ -95,6 +97,7 @@ public class Order{
 		return price;
 	}
 	
+	//print catalogue
 	public void printCatalogue(ProductCatalogue catalg) {
 		
 		for (int counter = 0; counter < 10; counter++)
