@@ -7,19 +7,34 @@ public class Customer {
 	private float creditRating;
 	private float discountRating;
 	
+	public void set_CreditRating(float newCreditRating) {
+		creditRating = newCreditRating;
+	}
+	public void set_Name(String newName) {
+		name = newName;
+	}
+	public void set_Address(String newAddress) {
+		address = newAddress;
+	}
+	public void set_DiscountRating(float newDiscountRating) {
+		discountRating = newDiscountRating;
+	}
+	
+	
+	
 	public String getName() {
-		return this.name;
+		return name;
 	}
 	
 	public String getAddress() {
-		return this.address;
+		return address;
 	}
 	
 	public float creditRating() {
-		return this.creditRating;
+		return creditRating;
 	}
 	
 	public float discountRating() {
-		return this.discountRating;
+		return discountRating;
 	}
 }

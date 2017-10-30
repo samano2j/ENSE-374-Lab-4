@@ -6,15 +6,38 @@ public class Product {
 	private double price;
 	private int productID;
 	
+	Product() {
+		name = null;
+		price = 0.0;
+		productID = 0;
+	}
+	public Product(String newName, double newPrice, int newProductID) {
+		name = newName;
+		price = newPrice;
+		productID = newProductID;
+	}
+	
+	// setters
+	public void setName(String newName) {
+		name = newName;
+	}
+	public void setPrice(double newPrice) {
+		price = newPrice;
+	}
+	public void setProductID(int newProductID) {
+		productID = newProductID;
+	}
+	
+	
+	// getters
 	public String getName() {
-		return this.name;
+		return name;
 	}
-	
 	public double getPrice() {
-		return this.price;
+		return price;
+	}
+	public int getProductID() {
+		return productID;
 	}
 	
-	public int getProductId() {
-		return this.productID;
-	}
 }
