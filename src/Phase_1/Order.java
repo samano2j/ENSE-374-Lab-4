@@ -76,7 +76,7 @@ public class Order{
 	public double calculatePrice(ProductCatalogue catalg) {
 		System.out.println("Order receipt:");
 		System.out.println("Date order recieved: " + dateReceived);
-		
+		price = 0;
 		int counterLoop = 0;
 		int counterItems = 0;
 		while (counterLoop < 10) {

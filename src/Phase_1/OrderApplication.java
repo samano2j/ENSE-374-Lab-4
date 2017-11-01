@@ -16,7 +16,8 @@ public class OrderApplication  {
 		
 		Scanner in = new Scanner(System.in); 
 		boolean chk = false;
-		char choice = 'y';
+		char choice1 = 'y';
+		char choice2 = 'y';
 		char discountQuestion;
 		double discount = 0;
 		double totalPrice = 0.0;
@@ -34,7 +35,7 @@ public class OrderApplication  {
 		chk = importCatalogue();														//import catalogues
 		System.out.println("List of Products Available:");							
 		cart.printCatalogue(catalg);													//print catalogues
-		while (choice == 'y') {														//get user orders
+		while (choice1 == 'y') {														//get user orders
 			checkIfproductExist = false;  
 			System.out.println("What do you want to order:");
 			item = in.nextLine();
@@ -62,15 +63,57 @@ public class OrderApplication  {
 			}
 			
 			System.out.println("Do you still wish to order? (y/n)");
-			choice = in.next().charAt(0);
+			choice1 = in.next().charAt(0);
 			counter++;
 			in.nextLine();
 		}
 		
-		if (chk == true) {															//calculate price and add discount
-			totalPrice = cart.calculatePrice(catalg);
-			System.out.println("Do you have discount (if yes press y, and if not press any other key");
+		if (chk == true) {																
+			totalPrice = cart.calculatePrice(catalg);							//delete an item
+			System.out.println("Would you like to delete an item from your order? (y/n) ");	
+			choice2 = in.next().charAt(0);
+			
+			in.nextLine();
+			
+			if (choice2 == 'y')
+			{
+				
+				while (choice2 == 'y') {
+					hold_pos = 0;
+					x = 0; 
+					checkIfproductExist = false; 
+					System.out.println("What item do you want to delete:");
+					item = in.nextLine(); 
+			
+					while(x < 10)
+					{
+						if ( Objects.equals(item, catalg.getProducts()[x].getName())) {
+						checkIfproductExist = true;  
+						hold_pos = x;
+						}
+						x++;
+					}
+				
+					if (checkIfproductExist == true) {
+						cart.quantity()[hold_pos].setQuantiy(0);
+						totalPrice = cart.calculatePrice(catalg);
+					} 
+					else {
+							System.out.println("Item doesn't exist in your list!");
+					}
+					
+					System.out.println("Would you like to delete an item from your order? (y/n) ");
+					choice2 = in.next().charAt(0);
+					
+					in.nextLine();
+				}
+			}
+			
+			totalPrice = cart.calculatePrice(catalg);							//calculate price and add discount
+			
+			System.out.println("Do you have discount (if yes press y, and if not press any other key");		
 			discountQuestion = in.next().charAt(0);
+			
 			if (discountQuestion == 'y') {
 				System.out.println("Enter the % of the discount :");
 				discount = in.nextDouble();
